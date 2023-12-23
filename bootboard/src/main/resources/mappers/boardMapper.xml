@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mvc.gu.mapper.board">
+	<!-- 게시물 목록 -->
+	<select id="getBoardLisst" resultType="BoardVO">
+		select
+			id, title, content, created_at, update_at,
+			view_count, good_count, user_id
+		from board <!-- ${tableName} -->
+		order by bno desc
+	</select>
+</mapper>
