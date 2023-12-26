@@ -8,19 +8,17 @@ import org.springframework.transaction.annotation.Transactional;
 import com.gu.domain.BoardVO;
 import com.gu.mapper.board.BoardMapper;
 
+import lombok.RequiredArgsConstructor;
+
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class BoardService {
 
-	// DI 의존성 주입 생성자 메서드 주입방식
-	private BoardMapper boardMapper;
+	private final BoardMapper boardMapper;
 	
-	public BoardService(BoardMapper boardMapper) {
-		this.boardMapper = boardMapper;
-	}
-	
-	public List<BoardVO> getBoardList() {
+	public List<BoardVO> getBoardList() throws Exception {
 		List<BoardVO> boardList = boardMapper.getBoardList();
 		
 		return boardList;

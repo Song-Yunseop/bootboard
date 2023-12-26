@@ -13,7 +13,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:if="${not #lists.isEmpty(bemberList)}" th:each="b : ${bemberList}">
+				<tr th:if="${not #lists.isEmpty(boardList)}" th:each="b : ${boardList}">
 					<td th:text="${b.id}"></td>
 					<td th:text="${b.title}"></td>
 				</tr>

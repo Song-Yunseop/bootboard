@@ -2,13 +2,11 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mvc.gu.mapper.board">
+<mapper namespace="com.gu.mapper.board.BoardMapper">
 	<!-- 게시물 목록 -->
-	<select id="getBoardLisst" resultType="BoardVO">
+	<select id="getBoardList" resultType="com.gu.domain.BoardVO">
 		select
-			id, title, content, created_at, update_at,
-			view_count, good_count, user_id
+			id, title
 		from board <!-- ${tableName} -->
-		order by bno desc
 	</select>
 </mapper>
