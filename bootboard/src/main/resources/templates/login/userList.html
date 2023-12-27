@@ -2,22 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 	   <meta charset="utf-8" />
-	   <title>게시판 페이지</title>
+	   <title>로그인 페이지</title>
 	</head>
 	<body>
 		<table border="1">
 			<thead>
 				<tr>
 					<th>번호</th>
-					<th>제목</th>
+					<th>아이디</th>
+					<th>비밀번호</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:if="${not #lists.isEmpty(boardList)}" th:each="b : ${boardList}">
-					<td th:text="${b.id}"></td>
-					<td th:text="${b.title}"></td>
+				<tr th:if="${not #lists.isEmpty(userList)}" th:each="m : ${userList}">
+					<td th:text="${m.id}"></td>
+					<td th:text="${m.name}"></td>
+					<td th:text="${m.pw}"></td>
 				</tr>
-				<tr th:unless="${not #lists.isEmpty(boardList)}">
+				<tr th:unless="${not #lists.isEmpty(userList)}">
 					<td colspan="7">등록된 회원의 정보가 없습니다.</td>
 				</tr>
 			</tbody>

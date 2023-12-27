@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gu.mapper.user.UserMapper">
+	<!-- 게시물 목록 -->
+	<select id="getUserList" resultType="com.gu.domain.UserVO">
+		select
+			id, name, pw
+		from users <!-- ${tableName} -->
+	</select>
+</mapper>
