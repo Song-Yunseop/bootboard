@@ -1,4 +1,4 @@
-package com.gu.controller.login;
+package com.gu.controller.user;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import com.gu.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/user")
 @RequiredArgsConstructor
-public class loginController {
+public class UserController {
 
 	private final UserService userService;
 	
@@ -26,6 +26,6 @@ public class loginController {
 		
 		model.addAttribute("userList", userList);
 		
-		return "/login/userList";
+		return "/user/userList";
 	}
 }
