@@ -23,4 +23,11 @@ public class UserService {
 		
 		return userList;
 	}
+	
+	public UserVO login(UserVO vo) throws Exception {
+		
+		UserVO login = userMapper.login(vo);
+		
+		return login;
+	}
 }
