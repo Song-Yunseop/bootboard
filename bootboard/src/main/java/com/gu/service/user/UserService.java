@@ -9,8 +9,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.gu.domain.JwtToken;
 import com.gu.domain.UserVO;
 import com.gu.mapper.user.UserMapper;
+import com.gu.security.JwtTokenProvider;
 
 import lombok.RequiredArgsConstructor;
 

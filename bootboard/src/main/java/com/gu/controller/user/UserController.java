@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.gu.domain.JwtToken;
 import com.gu.domain.UserVO;
 import com.gu.service.user.UserService;
 
@@ -40,7 +41,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<JwtToken> loginSuccess(@RequestBody Map<String, String> loginForm) {
-		JwtToken token = service.login(loginForm.get("username"), loginForm.get("password"));
+		JwtToken token = userService.login(loginForm.get("username"), loginForm.get("password"));
 		return ResponseEntity.ok(token);
 	}
 
