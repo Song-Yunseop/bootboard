@@ -7,9 +7,7 @@ server:
       enabled: true
 
 jwt:
- header: Authorization
- secret: rutyweorituwyerotiuweyrtoiuweyrtoweiurtywoeighdfsojkghsdfgsdofiguwyertouw | base64YWprbGdoc2Rma2xnanNkaGZnbGprc2RmZ2hsc2
- access-token-validity-in-seconds: 600 # 10 min
+ secret: fske256d3433kf2@er454ddd!35435rd!!!dkzfefdsdfjldkjf!dxfd5dsfx2432dszdfdsfsfs12xdfds2sa
   
 spring:
  datasource:
