@@ -41,7 +41,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<JwtToken> loginSuccess(@RequestBody Map<String, String> loginForm) {
-		JwtToken token = userService.login(loginForm.get("username"), loginForm.get("password"));
+		JwtToken token = userService.login(loginForm.get("name"), loginForm.get("pw"));
 		return ResponseEntity.ok(token);
 	}
 

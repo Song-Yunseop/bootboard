@@ -33,9 +33,9 @@ public class UserService {
 		return userList;
 	}
 	
-	public JwtToken login(String email, String password) {
+	public JwtToken login(String name, String pw) {
 		// Authentication 객체 생성
-		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);
+		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(name, pw);
 		Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
 		
 		// 검증된 인증 정보로 JWT 토큰 생성
