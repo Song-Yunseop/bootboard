@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
+import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,7 +25,6 @@ import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.security.Keys;
-import jakarta.xml.bind.DatatypeConverter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -34,7 +34,7 @@ public class JwtTokenProvider {
 	private final Key key;
 	
 	public JwtTokenProvider(@Value("${jwt.secret}") String secretKey) {
-		byte[] secretByteKey = DatatypeConverter.parseBase64Binary(secretKey);
+		byte[] secretByteKey = Base64.getDecoder().decode(secretKey);
 		this.key = Keys.hmacShaKeyFor(secretByteKey);
 	}
 	

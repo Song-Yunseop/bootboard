@@ -24,20 +24,20 @@ public class SecurityConfig { // WebSecurityConfigurerAdapter was deprecated
 		return new BCryptPasswordEncoder();
 	}
 	
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http
-			.csrf().disable()
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-			.and()
-			.formLogin().disable()
-			.httpBasic().disable()
-			.authorizeRequests()
-			.requestMatchers("/user").permitAll()
-			.and()
-			.addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
-		return http.build();
-			
-	}
+	   @Bean
+	    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	        http
+	                .csrf().disable()
+	                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+	                .and()
+	                .formLogin().disable()
+	                .httpBasic().disable()
+	                .authorizeRequests()
+	                .antMatchers("/user/**").permitAll()
+	                .and()
+	                .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+	        return http.build();
+	    }
+
 
 }
